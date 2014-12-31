@@ -1,0 +1,60 @@
+<html>
+  <head>
+  <title>支付宝即时到账交易接口</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+</style>
+</head>
+<body>
+  <div align="center">
+    <h1>支付宝即时到账交易接口快速通道</h1>
+    <p>以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己网站的需要，按照技术文档编写，并非一定要使用该代码。</p>
+    <form name="alipayment" action="/pay" method="post" target="_blank">
+      <table>
+        <tr>
+          <td>卖家支付宝帐户：</td>
+          <td>
+            <input size="30" name="seller_email" />
+            <span>必填</span>
+          </td>
+        </tr>
+        <tr>
+          <td>商户订单号：</td>
+          <td>
+            <input size="30" name="out_trade_no" />
+            <span>商户网站订单系统中唯一订单号，必填</span>
+          </td>
+        </tr>
+        <tr>
+          <td>订单名称：</td>
+          <td>
+            <input size="30" name="subject" />
+            <span>必填</span>
+          </td>
+        </tr>
+        <tr>
+          <td>付款金额：</td>
+          <td>
+            <input size="30" name="total_fee" />
+            <span>必填</span>
+          </td>
+        </tr>
+        <tr>
+          <td>订单描述：</td>
+          <td>
+            <input size="30" name="body" />
+            <span></span>
+          </td>
+        </tr>
+        <tr>
+          <td>商品展示地址：</td>
+          <td>
+            <input size="30" name="show_url" />
+            <span>需以http://开头的完整路径，例如：http://www.xxx.com/myorder.html</span>
+          </td>
+      </table>
+      <button type="submit">确认</button>
+    </form>
+  </div>
+</body>
+</html>

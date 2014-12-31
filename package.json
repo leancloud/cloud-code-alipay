@@ -1,0 +1,9 @@
+{
+  "name": "cloud-code-alipay-test",
+  "description": "Cloud Code Alipay test project.",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "debug": "^2.1.1"
+  }
+}
