@@ -47,7 +47,7 @@ avoscloud app add <projectName> <appId>
 切换目标应用
 
 ```
-avoscloud checkou <projectName>
+avoscloud checkout <projectName>
 ```
 
 部署应用到测试环境和生产环境
