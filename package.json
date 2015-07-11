@@ -1,9 +1,13 @@
 {
-  "name": "cloud-code-alipay-test",
-  "description": "Cloud Code Alipay test project.",
-  "version": "0.0.1",
+  "name": "leanengine-alipay-test",
+  "description": "LeanEngine Alipay test project.",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
-    "debug": "^2.1.1"
+    "body-parser": "1.12.3",
+    "debug": "^2.1.1",
+    "express": "4.12.3",
+    "leanengine": "^0.1.4",
+    "request": "^2.58.0"
   }
 }
