@@ -5,6 +5,14 @@ var request = require('request');
 
 var config = require('../config/alipay.json');
 
+function md5(data) {
+    var Buffer = require("buffer").Buffer;
+    var buf = new Buffer(data);
+    var str = buf.toString("binary");
+    var crypto = require("crypto");
+    return crypto.createHash("md5").update(str).digest("hex");
+}
+
 var defaultParams = {
   service: 'create_direct_pay_by_user',
   partner: config.partner,
@@ -77,7 +85,7 @@ var verifyResponse = function(notifyId, cb) {
 var verifySign = function(params, sign) {
   if (config.sign_type === 'MD5') {
     var paramsStr = createLinkString(paraFilter(params));
-    var mySign = crypto.createHash('md5').update(paramsStr + config.key).digest('hex');
+    var mySign = md5(paramsStr + config.key);
     return sign == mySign;
   }
   return false;
@@ -87,7 +95,7 @@ var buildRequestPara = function(params) {
   var reqParams = paraFilter(params);
   var paramsStr = createLinkString(reqParams);
   if (config.sign_type === 'MD5') {
-    reqParams.sign = crypto.createHash('md5').update(paramsStr + config.key).digest('hex');
+    reqParams.sign = md5(paramsStr + config.key);
     debug('build request params: paramsString=' + paramsStr + ', sign=' + reqParams.sign);
     reqParams.sign_type = config.sign_type;
   } else {
