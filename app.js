@@ -12,6 +12,15 @@ app.use(express.static('public'));
 // 加载云代码方法
 app.use(cloud);
 
+// 避开支付宝挖的坑
+app.use(function(req, res, next){
+  if(req.url == '/pay/notify' && req.get('content-type') !== 'application/x-www-form-urlencoded') {
+    req.headers['content-type'] = 'application/x-www-form-urlencoded';
+  }
+
+  next();
+});
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
