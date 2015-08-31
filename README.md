@@ -18,7 +18,7 @@
 git clone git@github.com:leancloud/cloud-code-alipay.git
 ```
 
-### 修改支付宝相关的配置 `cloud/alipay.json`
+### 修改支付宝相关的配置 `config/alipay.json`
 
 ```
 {

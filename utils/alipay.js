@@ -77,7 +77,7 @@ var verifyResponse = function(notifyId, cb) {
 var verifySign = function(params, sign) {
   if (config.sign_type === 'MD5') {
     var paramsStr = createLinkString(paraFilter(params));
-    var mySign = crypto.createHash('md5').update(paramsStr + config.key).digest('hex');
+    var mySign = crypto.createHash('md5').update(paramsStr + config.key, 'utf-8').digest('hex');
     return sign == mySign;
   }
   return false;
@@ -87,7 +87,7 @@ var buildRequestPara = function(params) {
   var reqParams = paraFilter(params);
   var paramsStr = createLinkString(reqParams);
   if (config.sign_type === 'MD5') {
-    reqParams.sign = crypto.createHash('md5').update(paramsStr + config.key).digest('hex');
+    reqParams.sign = crypto.createHash('md5').update(paramsStr + config.key, 'utf-8').digest('hex');
     debug('build request params: paramsString=' + paramsStr + ', sign=' + reqParams.sign);
     reqParams.sign_type = config.sign_type;
   } else {
