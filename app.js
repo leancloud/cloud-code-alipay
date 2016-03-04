@@ -14,6 +14,12 @@ app.use(cloud);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false,
+  type: function (req) {
+    return /x-www-form-urlencoded/.test(req.headers['content-type']);
+  }
+}));
 
 // 可以将一类的路由单独保存在一个文件中
 app.use('/pay', alipay);
