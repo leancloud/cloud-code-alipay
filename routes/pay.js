@@ -34,8 +34,8 @@ router.get('/return', function(req, res) {
 });
 
 router.post('/notify', function(req, res) {
-  console.log('notify params:', req.params);
-  alipay.verify(req.params, function(err, result) {
+  console.log('notify params:', req.body);
+  alipay.verify(req.body, function(err, result) {
     console.log('result: ', err, result);
     if (err) {
       return res.send('err: ' + err);
