@@ -1,4 +1,9 @@
-# 使用云代码接入支付宝的示例
+# 注意
+
+因支付宝接口变动频繁，该项目不再维护，代码可能无法正常工作。
+
+<details>
+<summary>以下为原 README 内容</summary>
 
 ## 了解支付宝「即时到账收款」
 
@@ -83,5 +88,5 @@ avoscloud deploy && avoslcoud publish
 * `POST /pay`: 接受表单信息、签名，并准备跳转到支付宝。
 * `GET /pay/return`: 等待支付宝同步回调，并验证调用方是否真正来自支付宝。
 * `POST /pay/notify`:等待支付宝异步回调，并验证调用方是否真正来自支付宝。
-
+</details>
 
